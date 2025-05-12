@@ -51,11 +51,6 @@ class _ExpandableTextViewState extends State<ExpandableTextView> {
     if (mounted) setState(() {});
   }
 
-  void onToggleExpand() {
-    controller.toggleExpand();
-    if (mounted) setState(() {});
-  }
-
   /// Calculate the actual size of the text string.
   Size calculateTextSize(
       String text, {
