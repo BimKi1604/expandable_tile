@@ -1,5 +1,5 @@
 import 'package:expandable_tile/src/data/type.dart';
-import 'package:expandable_tile/src/widget/expandable_tile_view.dart';
+import 'package:expandable_tile/src/widget/expandable_text_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -44,11 +44,11 @@ class _ExpandedPageState extends State<ExpandedPage> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          const ExpandableTitleView(
+          const ExpandableTextView(
             title: "Demo expand text",
             child: Text("This is demo for expand text vertical. The Child is Text"),
           ),
-          ExpandableTitleView(
+          ExpandableTextView(
             axis: AxisExpand.horizontal,
             title: "Axis horizontal",
             child: Align(
@@ -61,7 +61,7 @@ class _ExpandedPageState extends State<ExpandedPage> {
               ),
             ),
           ),
-          ExpandableTitleView(
+          ExpandableTextView(
             title: "Axis vertical",
             child: Align(
               alignment: Alignment.centerLeft,
@@ -73,7 +73,7 @@ class _ExpandedPageState extends State<ExpandedPage> {
               ),
             ),
           ),
-          ExpandableTitleView(
+          ExpandableTextView(
             axis: AxisExpand.horizontal,
             posHorizontal: true,
             title: "Horizontal position | horizontal",
@@ -87,7 +87,7 @@ class _ExpandedPageState extends State<ExpandedPage> {
               ),
             ),
           ),
-          ExpandableTitleView(
+          ExpandableTextView(
             posHorizontal: true,
             title: "Horizontal position| vertical",
             child: Align(

@@ -7,7 +7,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class ExpandableTitleView extends StatefulWidget {
+class ExpandableTextView extends StatefulWidget {
 
   final String title;
   final Widget child;
@@ -18,7 +18,7 @@ class ExpandableTitleView extends StatefulWidget {
   final bool widthFill;
   final bool posHorizontal;
 
-  const ExpandableTitleView({
+  const ExpandableTextView({
     super.key,
     required this.title,
     required this.child,
@@ -31,10 +31,10 @@ class ExpandableTitleView extends StatefulWidget {
   });
 
   @override
-  State<ExpandableTitleView> createState() => _ExpandableTitleViewState();
+  State<ExpandableTextView> createState() => _ExpandableTextViewState();
 }
 
-class _ExpandableTitleViewState extends State<ExpandableTitleView> {
+class _ExpandableTextViewState extends State<ExpandableTextView> {
   final ExpandTileController controller = ExpandTileController();
 
   @override
