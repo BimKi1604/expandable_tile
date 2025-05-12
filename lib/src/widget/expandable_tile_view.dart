@@ -88,19 +88,22 @@ class _ExpandableTitleViewState extends State<ExpandableTitleView> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Flexible(
-              child: ClickWidget(
-                onTap: controller.toggleExpand,
-                child: Container(
-                  width: getWidth(),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5.0),
-                    color: widget.titleBGColor,
-                  ),
-                  padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-                  child: Text(
-                    controller.title ?? "",
-                    style: widget.titleTextStyle ?? AppStyles.titleText,
-                    textAlign: TextAlign.center,
+              child: Container(
+                width: getWidth(),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5.0),
+                  color: widget.titleBGColor,
+                ),
+                child: ClickWidget(
+                  color: widget.titleBGColor,
+                  onTap: controller.toggleExpand,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                    child: Text(
+                      controller.title ?? "",
+                      style: widget.titleTextStyle ?? AppStyles.titleText,
+                      textAlign: TextAlign.center,
+                    ),
                   ),
                 ),
               ),
@@ -110,7 +113,9 @@ class _ExpandableTitleViewState extends State<ExpandableTitleView> {
                 child: ExpandSection(
                   expand: controller.isExpand,
                   axisExpand: controller.axisExpand,
-                  child: controller.expanded!,
+                  child: Visibility(
+                      visible: controller.isExpand,
+                      child: controller.expanded!),
                 ),
               ),
           ],
@@ -119,7 +124,9 @@ class _ExpandableTitleViewState extends State<ExpandableTitleView> {
           ExpandSection(
             expand: controller.isExpand,
             axisExpand: controller.axisExpand,
-            child: controller.expanded!,
+            child: Visibility(
+                visible: controller.isExpand,
+                child: controller.expanded!),
           ),
       ],
     );

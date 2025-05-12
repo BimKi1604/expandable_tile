@@ -46,12 +46,10 @@ class _ExpandedPageState extends State<ExpandedPage> {
         children: <Widget>[
           const ExpandableTitleView(
             title: "Demo expand text",
-            titleBGColor: Colors.yellow,
             child: Text("This is demo for expand text vertical. The Child is Text"),
           ),
           ExpandableTitleView(
             axis: AxisExpand.horizontal,
-            titleBGColor: Colors.yellow,
             title: "Axis horizontal",
             child: Align(
               alignment: Alignment.centerLeft,
@@ -64,7 +62,6 @@ class _ExpandedPageState extends State<ExpandedPage> {
             ),
           ),
           ExpandableTitleView(
-            titleBGColor: Colors.yellow,
             title: "Axis vertical",
             child: Align(
               alignment: Alignment.centerLeft,
@@ -79,7 +76,6 @@ class _ExpandedPageState extends State<ExpandedPage> {
           ExpandableTitleView(
             axis: AxisExpand.horizontal,
             posHorizontal: true,
-            titleBGColor: Colors.yellow,
             title: "Horizontal position | horizontal",
             child: Align(
               alignment: Alignment.centerLeft,
@@ -93,7 +89,6 @@ class _ExpandedPageState extends State<ExpandedPage> {
           ),
           ExpandableTitleView(
             posHorizontal: true,
-            titleBGColor: Colors.yellow,
             title: "Horizontal position| vertical",
             child: Align(
               alignment: Alignment.centerLeft,

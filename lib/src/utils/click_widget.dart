@@ -5,11 +5,13 @@ class ClickWidget extends StatelessWidget {
   final Widget child;
   final EdgeInsets padding;
   final BorderRadius borderRadius;
+  final Color? color;
 
   const ClickWidget({
     super.key,
     required this.onTap,
     required this.child,
+    this.color,
     this.padding = const EdgeInsets.all(4),
     this.borderRadius = const BorderRadius.all(Radius.circular(8)),
   });
@@ -20,7 +22,8 @@ class ClickWidget extends StatelessWidget {
       color: Colors.transparent,
       borderRadius: borderRadius,
       child: InkWell(
-        onTap: onTap,
+        onTap: onTap, 
+        splashColor: color?.withAlpha(50),
         borderRadius: borderRadius,
         child: Padding(
           padding: padding,
