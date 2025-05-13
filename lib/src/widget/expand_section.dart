@@ -3,6 +3,7 @@ import 'package:expandable_tile/src/data/type.dart';
 import 'package:expandable_tile/src/utils/animation_utils.dart';
 import 'package:flutter/material.dart';
 
+/// The main show animation expandable tile
 class ExpandSection extends StatefulWidget {
   final Widget child;
   final bool expand;

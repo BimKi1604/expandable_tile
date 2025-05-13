@@ -5,6 +5,7 @@ import 'package:flutter/widgets.dart';
 
 import 'expandable_tile_state.dart';
 
+/// The main widget usage
 class ExpandableTileView extends StatefulWidget {
   final String title;
   final Widget child;
@@ -16,6 +17,7 @@ class ExpandableTileView extends StatefulWidget {
   final bool posHorizontal;
   final ExpandableAnimation animationType;
 
+  /// Private constructor
   const ExpandableTileView._(
       {required this.title,
       required this.child,
@@ -27,6 +29,7 @@ class ExpandableTileView extends StatefulWidget {
       this.posHorizontal = false,
       this.animationType = ExpandableAnimation.def});
 
+  /// Animation Scale
   factory ExpandableTileView.animatedScale({
     required String title,
     required Widget child,
@@ -48,6 +51,7 @@ class ExpandableTileView extends StatefulWidget {
     );
   }
 
+  /// Animation Fade
   factory ExpandableTileView.animatedFade({
     required String title,
     required Widget child,
@@ -69,6 +73,7 @@ class ExpandableTileView extends StatefulWidget {
     );
   }
 
+  /// Animation Default (Size)
   factory ExpandableTileView.animatedDef({
     required String title,
     required Widget child,

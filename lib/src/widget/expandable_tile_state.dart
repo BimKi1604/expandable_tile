@@ -6,6 +6,7 @@ import 'package:expandable_tile/src/widget/expand_section.dart';
 import 'package:expandable_tile/src/widget/expandable_tile_view.dart';
 import 'package:flutter/material.dart';
 
+/// Expandable Tile State control state expand
 class ExpandableTileViewState extends State<ExpandableTileView> {
   final ExpandTileController controller = ExpandTileController();
 
@@ -39,17 +40,19 @@ class ExpandableTileViewState extends State<ExpandableTileView> {
   }
 
   double getWidth() {
-    if (widget.posHorizontal)
+    if (widget.posHorizontal) {
       return (calculateTextSize(controller.title ?? "",
                   style: widget.titleTextStyle ?? AppStyles.titleText)
               .width +
           40);
+    }
     if (widget.width != null) return widget.width!;
-    if (widget.widthFill)
+    if (widget.widthFill) {
       return (calculateTextSize(controller.title ?? "",
                   style: widget.titleTextStyle ?? AppStyles.titleText)
               .width +
           40);
+    }
     return MediaQuery.sizeOf(context).width;
   }
 

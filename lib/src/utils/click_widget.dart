@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// The class helper for click event
 class ClickWidget extends StatelessWidget {
   final VoidCallback onTap;
   final Widget child;
