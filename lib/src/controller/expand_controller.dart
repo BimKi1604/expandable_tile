@@ -32,8 +32,6 @@ class ExpandTileController extends ChangeNotifier {
   }
 
   void toggleExpand() {
-    print(_isExpand);
-    print(axisExpand);
     _isExpand = !_isExpand;
     notifyListeners();
   }

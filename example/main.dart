@@ -1,5 +1,5 @@
 import 'package:expandable_tile/src/data/type.dart';
-import 'package:expandable_tile/src/widget/expandable_text_view.dart';
+import 'package:expandable_tile/src/widget/expandable_tile_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -41,66 +41,124 @@ class _ExpandedPageState extends State<ExpandedPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("Expanded Tile Demo")),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          const ExpandableTextView(
-            title: "Demo expand text",
-            child: Text("This is demo for expand text vertical. The Child is Text"),
-          ),
-          ExpandableTextView(
-            axis: AxisExpand.horizontal,
-            title: "Axis horizontal",
-            child: Align(
-              alignment: Alignment.centerLeft,
-              child: Column(
-                children: [
-                  const Text("This is demo for expand text with axis horizontal. The Child is Text and Image"),
-                  Image.network("https://www.shutterstock.com/image-photo/demo-text-message-magnifying-glass-600nw-2491336635.jpg", height: 60, width: 100,)
-                ],
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            const Text("Vertical position", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700, color: Colors.deepOrange)),
+            Padding(
+              padding: const EdgeInsets.only(left: 5.0),
+              child: ExpandableTileView.animatedDef(
+                title: "Animation default vertical",
+                child: const Text("This is demo for expand text vertical. The Child is Text"),
               ),
             ),
-          ),
-          ExpandableTextView(
-            title: "Axis vertical",
-            child: Align(
-              alignment: Alignment.centerLeft,
-              child: Column(
-                children: [
-                  const Text("This is demo for expand text with axis vertical. The Child is Text and Image"),
-                  Image.network("https://www.shutterstock.com/image-photo/demo-text-message-magnifying-glass-600nw-2491336635.jpg", height: 60, width: 100,)
-                ],
+            Padding(
+              padding: const EdgeInsets.only(left: 5.0),
+              child: ExpandableTileView.animatedDef(
+                axis: AxisExpand.horizontal,
+                title: "Animation default horizontal",
+                child: const Text("This is demo for expand text vertical. The Child is Text"),
               ),
             ),
-          ),
-          ExpandableTextView(
-            axis: AxisExpand.horizontal,
-            posHorizontal: true,
-            title: "Horizontal position | horizontal",
-            child: Align(
-              alignment: Alignment.centerLeft,
-              child: Column(
-                children: [
-                  const Text("This is demo for expand text horizontal with horizontal position. The Child is Text and Image"),
-                  Image.network("https://www.shutterstock.com/image-photo/demo-text-message-magnifying-glass-600nw-2491336635.jpg", height: 60, width: 100,)
-                ],
+            Padding(
+              padding: const EdgeInsets.only(left: 5.0),
+              child: ExpandableTileView.animatedFade(
+                title: "Animation fade",
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Column(
+                    children: [
+                      const Text("This is demo for expand text with axis horizontal. The Child is Text and Image"),
+                      Image.network("https://www.shutterstock.com/image-photo/demo-text-message-magnifying-glass-600nw-2491336635.jpg", height: 60, width: 100,)
+                    ],
+                  ),
+                ),
               ),
             ),
-          ),
-          ExpandableTextView(
-            posHorizontal: true,
-            title: "Horizontal position| vertical",
-            child: Align(
-              alignment: Alignment.centerLeft,
-              child: Column(
-                children: [
-                  const Text("This is demo for expand text vertical. The Child is Text and Image"),
-                  Image.network("https://www.shutterstock.com/image-photo/demo-text-message-magnifying-glass-600nw-2491336635.jpg", height: 60, width: 100,)
-                ],
+            Padding(
+              padding: const EdgeInsets.only(left: 5.0),
+              child: ExpandableTileView.animatedScale(
+                title: "Animation scale",
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Column(
+                    children: [
+                      const Text("This is demo for expand text with axis vertical. The Child is Text and Image"),
+                      Image.network("https://www.shutterstock.com/image-photo/demo-text-message-magnifying-glass-600nw-2491336635.jpg", height: 60, width: 100,)
+                    ],
+                  ),
+                ),
               ),
             ),
-          ),
-        ],
+            const Text("Horizontal position", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700, color: Colors.deepOrange)),
+            Padding(
+              padding: const EdgeInsets.only(left: 5.0),
+              child: ExpandableTileView.animatedDef(
+                axis: AxisExpand.horizontal,
+                posHorizontal: true,
+                title: "Animation default horizontal",
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Column(
+                    children: [
+                      const Text("This is demo for expand text horizontal with horizontal position. The Child is Text and Image"),
+                      Image.network("https://www.shutterstock.com/image-photo/demo-text-message-magnifying-glass-600nw-2491336635.jpg", height: 60, width: 100,)
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 5.0),
+              child: ExpandableTileView.animatedDef(
+                posHorizontal: true,
+                title: "Animation default vertical",
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Column(
+                    children: [
+                      const Text("This is demo for expand text vertical. The Child is Text and Image"),
+                      Image.network("https://www.shutterstock.com/image-photo/demo-text-message-magnifying-glass-600nw-2491336635.jpg", height: 60, width: 100,)
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 5.0),
+              child: ExpandableTileView.animatedScale(
+                posHorizontal: true,
+                title: "Animation scale",
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Column(
+                    children: [
+                      const Text("This is demo for expand text vertical. The Child is Text and Image"),
+                      Image.network("https://www.shutterstock.com/image-photo/demo-text-message-magnifying-glass-600nw-2491336635.jpg", height: 60, width: 100,)
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 5.0),
+              child: ExpandableTileView.animatedFade(
+                posHorizontal: true,
+                title: "Animation fade",
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Column(
+                    children: [
+                      const Text("This is demo for expand text vertical. The Child is Text and Image"),
+                      Image.network("https://www.shutterstock.com/image-photo/demo-text-message-magnifying-glass-600nw-2491336635.jpg", height: 60, width: 100,)
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

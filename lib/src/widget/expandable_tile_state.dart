@@ -1,40 +1,11 @@
 import 'package:expandable_tile/src/controller/expand_controller.dart';
-import 'package:expandable_tile/src/data/type.dart';
 import 'package:expandable_tile/src/theme/styles.dart';
 import 'package:expandable_tile/src/utils/click_widget.dart';
 import 'package:expandable_tile/src/widget/expand_section.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:expandable_tile/src/widget/expandable_tile_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
-class ExpandableTextView extends StatefulWidget {
-
-  final String title;
-  final Widget child;
-  final AxisExpand axis;
-  final double? width;
-  final Color? titleBGColor;
-  final TextStyle? titleTextStyle;
-  final bool widthFill;
-  final bool posHorizontal;
-
-  const ExpandableTextView({
-    super.key,
-    required this.title,
-    required this.child,
-    this.width,
-    this.axis = AxisExpand.vertical,
-    this.titleBGColor,
-    this.titleTextStyle,
-    this.widthFill = true,
-    this.posHorizontal = false
-  });
-
-  @override
-  State<ExpandableTextView> createState() => _ExpandableTextViewState();
-}
-
-class _ExpandableTextViewState extends State<ExpandableTextView> {
+class ExpandableTileViewState extends State<ExpandableTileView> {
   final ExpandTileController controller = ExpandTileController();
 
   @override
@@ -93,7 +64,7 @@ class _ExpandableTextViewState extends State<ExpandableTextView> {
                   color: widget.titleBGColor,
                   onTap: controller.toggleExpand,
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                    padding: const EdgeInsets.symmetric(vertical: 5),
                     child: Text(
                       controller.title ?? "",
                       style: widget.titleTextStyle ?? AppStyles.titleText,
@@ -107,6 +78,7 @@ class _ExpandableTextViewState extends State<ExpandableTextView> {
               Flexible(
                 child: ExpandSection(
                   expand: controller.isExpand,
+                  animationType: widget.animationType,
                   axisExpand: controller.axisExpand,
                   child: Visibility(
                       visible: controller.isExpand,
@@ -118,6 +90,7 @@ class _ExpandableTextViewState extends State<ExpandableTextView> {
         if (!widget.posHorizontal)
           ExpandSection(
             expand: controller.isExpand,
+            animationType: widget.animationType,
             axisExpand: controller.axisExpand,
             child: Visibility(
                 visible: controller.isExpand,
