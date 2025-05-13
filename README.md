@@ -120,3 +120,21 @@ To install the `expandable_tile` package, add the following to your `pubspec.yam
 ```yaml
 dependencies:
   expandable_tile: ^1.0.0
+```
+## 📦 Supported SDKs
+
+- **Flutter**: Stable channel
+- **Android**: SDK 21+
+- **iOS**: iOS 9+
+
+---
+
+## 🙌 Contributions
+
+Feel free to open issues or pull requests on [GitHub](https://github.com/BimKi1604/expandable_tile).
+
+---
+
+## 📄 License
+
+MIT License. See [LICENSE](LICENSE) for details.
