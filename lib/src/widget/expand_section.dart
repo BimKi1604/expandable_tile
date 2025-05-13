@@ -48,17 +48,17 @@ class _ExpandSectionState extends State<ExpandSection>
     // Set the initial state to avoid splash delay or UI jump.
     if (widget.expand) {
       expandController.value = 1.0;
-    } else {
-      expandController.value = 0.0;
+      return;
     }
+    expandController.value = 0.0;
   }
 
   void _runExpandCheck() {
     if (widget.expand) {
       expandController.forward();
-    } else {
-      expandController.reverse();
+      return;
     }
+    expandController.reverse();
   }
 
   @override

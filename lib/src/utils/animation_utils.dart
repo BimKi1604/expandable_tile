@@ -6,7 +6,7 @@ class AnimationUtils {
       case ExpandableAnimation.scale:
         return 400;
       case ExpandableAnimation.fade:
-        return 1200;
+        return 700;
       default: return 300;
     }
   }

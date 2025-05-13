@@ -1,5 +1,6 @@
 import 'package:expandable_tile/src/controller/expand_controller.dart';
 import 'package:expandable_tile/src/theme/styles.dart';
+import 'package:expandable_tile/src/utils/animation_utils.dart';
 import 'package:expandable_tile/src/utils/click_widget.dart';
 import 'package:expandable_tile/src/widget/expand_section.dart';
 import 'package:expandable_tile/src/widget/expandable_tile_view.dart';
@@ -80,9 +81,18 @@ class ExpandableTileViewState extends State<ExpandableTileView> {
                   expand: controller.isExpand,
                   animationType: widget.animationType,
                   axisExpand: controller.axisExpand,
-                  child: Visibility(
-                      visible: controller.isExpand,
-                      child: controller.expanded!),
+                  child: AnimatedSwitcher(
+                      duration: Duration(milliseconds: AnimationUtils.getMilByAnimationType(widget.animationType)),
+                      child: controller.isExpand
+                          ? KeyedSubtree(
+                        key: const ValueKey('expanded'),
+                        child: controller.expanded!,
+                      )
+                          : const KeyedSubtree(
+                        key: ValueKey('collapsed'),
+                        child: SizedBox.shrink(),
+                      )
+                  ),
                 ),
               ),
           ],
@@ -92,9 +102,18 @@ class ExpandableTileViewState extends State<ExpandableTileView> {
             expand: controller.isExpand,
             animationType: widget.animationType,
             axisExpand: controller.axisExpand,
-            child: Visibility(
-                visible: controller.isExpand,
-                child: controller.expanded!),
+            child: AnimatedSwitcher(
+                duration: Duration(milliseconds: AnimationUtils.getMilByAnimationType(widget.animationType)),
+                child: controller.isExpand
+                    ? KeyedSubtree(
+                  key: const ValueKey('expanded'),
+                  child: controller.expanded!,
+                )
+                    : const KeyedSubtree(
+                  key: ValueKey('collapsed'),
+                  child: SizedBox.shrink(),
+                )
+            ),
           ),
       ],
     );
