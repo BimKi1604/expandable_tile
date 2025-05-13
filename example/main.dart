@@ -60,7 +60,7 @@ class _ExpandedPageState extends State<ExpandedPage> {
                 child: ExpandableTileView.animatedDef(
                   axis: AxisExpand.horizontal,
                   title: "Animation default horizontal",
-                  child: const Text("This is demo for expand text vertical. The Child is Text"),
+                  child: const Text("This is demo for expand text horizontal. The Child is Text"),
                 ),
               ),
               Padding(
@@ -71,7 +71,7 @@ class _ExpandedPageState extends State<ExpandedPage> {
                     alignment: Alignment.centerLeft,
                     child: Column(
                       children: [
-                        const Text("This is demo for expand text with axis horizontal. The Child is Text and Image"),
+                        const Text("This is demo for expand text with animation fading in and out!"),
                         Image.network("https://www.shutterstock.com/image-photo/demo-text-message-magnifying-glass-600nw-2491336635.jpg", height: 60, width: 100,)
                       ],
                     ),
@@ -86,7 +86,7 @@ class _ExpandedPageState extends State<ExpandedPage> {
                     alignment: Alignment.centerLeft,
                     child: Column(
                       children: [
-                        const Text("This is demo for expand text with axis vertical. The Child is Text and Image"),
+                        const Text("This is demo for expand text with scaling animation!"),
                         Image.network("https://www.shutterstock.com/image-photo/demo-text-message-magnifying-glass-600nw-2491336635.jpg", height: 60, width: 100,)
                       ],
                     ),
@@ -120,7 +120,7 @@ class _ExpandedPageState extends State<ExpandedPage> {
                     alignment: Alignment.centerLeft,
                     child: Column(
                       children: [
-                        const Text("This is demo for expand text vertical. The Child is Text and Image"),
+                        const Text("This is demo for expand text vertical with horizontal position. The Child is Text and Image"),
                         Image.network("https://www.shutterstock.com/image-photo/demo-text-message-magnifying-glass-600nw-2491336635.jpg", height: 60, width: 100,)
                       ],
                     ),
@@ -136,7 +136,7 @@ class _ExpandedPageState extends State<ExpandedPage> {
                     alignment: Alignment.centerLeft,
                     child: Column(
                       children: [
-                        const Text("This is demo for expand text vertical. The Child is Text and Image"),
+                        const Text("This is demo for expand text with scaling animation!"),
                         Image.network("https://www.shutterstock.com/image-photo/demo-text-message-magnifying-glass-600nw-2491336635.jpg", height: 60, width: 100,)
                       ],
                     ),
@@ -152,7 +152,7 @@ class _ExpandedPageState extends State<ExpandedPage> {
                     alignment: Alignment.centerLeft,
                     child: Column(
                       children: [
-                        const Text("This is demo for expand text vertical. The Child is Text and Image"),
+                        const Text("This is demo for expand text with animation fading in and out!"),
                         Image.network("https://www.shutterstock.com/image-photo/demo-text-message-magnifying-glass-600nw-2491336635.jpg", height: 60, width: 100,)
                       ],
                     ),
