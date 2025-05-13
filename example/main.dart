@@ -40,7 +40,7 @@ class _ExpandedPageState extends State<ExpandedPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Expanded Tile Demo")),
+      appBar: AppBar(title: const Text("Demo Expandable Tile")),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
