@@ -1,3 +1,17 @@
-enum AxisExpand { horizontal, vertical }
+/// The direction in which the tile expands.
+enum AxisExpand {
+  /// Expands horizontally.
+  horizontal,
+  /// Expands vertically.
+  vertical
+}
 
-enum ExpandableAnimation { def, fade, scale }
+/// The expandable animation type
+enum ExpandableAnimation {
+  /// default size animation
+  def,
+  /// fade animation
+  fade,
+  /// scale animation
+  scale
+}
