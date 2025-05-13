@@ -14,8 +14,10 @@ class ExpandSection extends StatefulWidget {
     this.expand = false,
     required this.child,
     this.axisExpand = AxisExpand.vertical,
-    this.animationType = ExpandableAnimation.def, /// default
-  }) ;
+    this.animationType = ExpandableAnimation.def,
+
+    /// default
+  });
 
   @override
   State<ExpandSection> createState() => _ExpandSectionState();
@@ -39,7 +41,9 @@ class _ExpandSectionState extends State<ExpandSection>
   void prepareAnimations() {
     expandController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: AnimationUtils.getMilByAnimationType(widget.animationType)),
+      duration: Duration(
+          milliseconds:
+              AnimationUtils.getMilByAnimationType(widget.animationType)),
     );
     animation = CurvedAnimation(
       parent: expandController,
@@ -73,18 +77,20 @@ class _ExpandSectionState extends State<ExpandSection>
     super.dispose();
   }
 
-  Map<ExpandableAnimation, AnimationBuilder> getAnimationBuilders(AxisExpand axisExpand) {
-    final axis = axisExpand == AxisExpand.horizontal ? Axis.horizontal : Axis.vertical;
+  Map<ExpandableAnimation, AnimationBuilder> getAnimationBuilders(
+      AxisExpand axisExpand) {
+    final axis =
+        axisExpand == AxisExpand.horizontal ? Axis.horizontal : Axis.vertical;
 
     return {
       ExpandableAnimation.def: (child, animation) => ClipRect(
-        child: SizeTransition(
-          axis: axis,
-          axisAlignment: 1.0,
-          sizeFactor: animation,
-          child: child,
-        ),
-      ),
+            child: SizeTransition(
+              axis: axis,
+              axisAlignment: 1.0,
+              sizeFactor: animation,
+              child: child,
+            ),
+          ),
       ExpandableAnimation.fade: (child, animation) =>
           FadeTransition(opacity: animation, child: child),
       ExpandableAnimation.scale: (child, animation) =>

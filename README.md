@@ -51,6 +51,21 @@ A Flutter package that helps you expand or collapse widgets to show/hide content
 
 ---
 
+## 🧾 Constructor Parameters
+
+| Field              | Type                  | Default                    | Description                                                                   |
+|--------------------|-----------------------|----------------------------|-------------------------------------------------------------------------------|
+| `title`            | `String`              | **required**               | The widget displayed as the expandable tile's title.                          |
+| `child`            | `Widget`              | **required**               | The content widget shown when expanded.                                       |
+| `width`            | `double?`             | `null`                     | The width of the entire tile. If null, it adapts to the content.              |
+| `axis`             | `AxisExpand`          | `AxisExpand.vertical`      | The direction of expansion: vertical or horizontal.                           |
+| `titleBGColor`     | `Color?`              | `null`                     | Background color for the title section.                                       |
+| `titleTextStyle`   | `TextStyle?`          | `null`                     | Text style for the title (if it's a `Text` widget).                           |
+| `widthFill`        | `bool`                | `true`                     | If true, the total width of the ExpandableTile will fit title and child       |
+| `posHorizontal`    | `bool`                | `false`                    | Applies only if `axis` is horizontal. If true, title on left, child on right. |
+
+---
+
 ## 🚀 Usage
 
 ### ✅ Basic Usage
@@ -98,28 +113,13 @@ ExpandableTileView.animatedScale(
 
 ---
 
-## 🧾 Constructor Parameters
-
-| Field              | Type                  | Default                    | Description                                                                   |
-|--------------------|-----------------------|----------------------------|-------------------------------------------------------------------------------|
-| `title`            | `String`              | **required**               | The widget displayed as the expandable tile's title.                          |
-| `child`            | `Widget`              | **required**               | The content widget shown when expanded.                                       |
-| `width`            | `double?`             | `null`                     | The width of the entire tile. If null, it adapts to the content.              |
-| `axis`             | `AxisExpand`          | `AxisExpand.vertical`      | The direction of expansion: vertical or horizontal.                           |
-| `titleBGColor`     | `Color?`              | `null`                     | Background color for the title section.                                       |
-| `titleTextStyle`   | `TextStyle?`          | `null`                     | Text style for the title (if it's a `Text` widget).                           |
-| `widthFill`        | `bool`                | `true`                     | If true, the total width of the ExpandableTile will fit title and child       |
-| `posHorizontal`    | `bool`                | `false`                    | Applies only if `axis` is horizontal. If true, title on left, child on right. |
-
----
-
 ## ⚙️ Setup
 
 To install the `expandable_tile` package, add the following to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  expandable_tile: ^1.0.0
+  expandable_tile: ^1.0.1
 ```
 ## 📦 Supported SDKs
 

@@ -25,11 +25,11 @@ class ExpandableTileViewState extends State<ExpandableTileView> {
 
   /// Calculate the actual size of the text string.
   Size calculateTextSize(
-      String text, {
-        required TextStyle style,
-        int maxLines = 1,
-        double maxWidth = double.infinity,
-      }) {
+    String text, {
+    required TextStyle style,
+    int maxLines = 1,
+    double maxWidth = double.infinity,
+  }) {
     final TextPainter textPainter = TextPainter(
       text: TextSpan(text: text, style: style),
       maxLines: maxLines,
@@ -39,9 +39,17 @@ class ExpandableTileViewState extends State<ExpandableTileView> {
   }
 
   double getWidth() {
-    if (widget.posHorizontal) return (calculateTextSize(controller.title ?? "", style: widget.titleTextStyle ?? AppStyles.titleText).width + 40);
+    if (widget.posHorizontal)
+      return (calculateTextSize(controller.title ?? "",
+                  style: widget.titleTextStyle ?? AppStyles.titleText)
+              .width +
+          40);
     if (widget.width != null) return widget.width!;
-    if (widget.widthFill) return (calculateTextSize(controller.title ?? "", style: widget.titleTextStyle ?? AppStyles.titleText).width + 40);
+    if (widget.widthFill)
+      return (calculateTextSize(controller.title ?? "",
+                  style: widget.titleTextStyle ?? AppStyles.titleText)
+              .width +
+          40);
     return MediaQuery.sizeOf(context).width;
   }
 
@@ -82,17 +90,18 @@ class ExpandableTileViewState extends State<ExpandableTileView> {
                   animationType: widget.animationType,
                   axisExpand: controller.axisExpand,
                   child: AnimatedSwitcher(
-                      duration: Duration(milliseconds: AnimationUtils.getMilByAnimationType(widget.animationType)),
+                      duration: Duration(
+                          milliseconds: AnimationUtils.getMilByAnimationType(
+                              widget.animationType)),
                       child: controller.isExpand
                           ? KeyedSubtree(
-                        key: const ValueKey('expanded'),
-                        child: controller.expanded!,
-                      )
+                              key: const ValueKey('expanded'),
+                              child: controller.expanded!,
+                            )
                           : const KeyedSubtree(
-                        key: ValueKey('collapsed'),
-                        child: SizedBox.shrink(),
-                      )
-                  ),
+                              key: ValueKey('collapsed'),
+                              child: SizedBox.shrink(),
+                            )),
                 ),
               ),
           ],
@@ -103,17 +112,18 @@ class ExpandableTileViewState extends State<ExpandableTileView> {
             animationType: widget.animationType,
             axisExpand: controller.axisExpand,
             child: AnimatedSwitcher(
-                duration: Duration(milliseconds: AnimationUtils.getMilByAnimationType(widget.animationType)),
+                duration: Duration(
+                    milliseconds: AnimationUtils.getMilByAnimationType(
+                        widget.animationType)),
                 child: controller.isExpand
                     ? KeyedSubtree(
-                  key: const ValueKey('expanded'),
-                  child: controller.expanded!,
-                )
+                        key: const ValueKey('expanded'),
+                        child: controller.expanded!,
+                      )
                     : const KeyedSubtree(
-                  key: ValueKey('collapsed'),
-                  child: SizedBox.shrink(),
-                )
-            ),
+                        key: ValueKey('collapsed'),
+                        child: SizedBox.shrink(),
+                      )),
           ),
       ],
     );

@@ -7,7 +7,8 @@ class AnimationUtils {
         return 400;
       case ExpandableAnimation.fade:
         return 700;
-      default: return 300;
+      default:
+        return 300;
     }
   }
 }

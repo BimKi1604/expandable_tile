@@ -22,7 +22,7 @@ class ClickWidget extends StatelessWidget {
       color: Colors.transparent,
       borderRadius: borderRadius,
       child: InkWell(
-        onTap: onTap, 
+        onTap: onTap,
         splashColor: color?.withAlpha(50),
         borderRadius: borderRadius,
         child: Padding(
