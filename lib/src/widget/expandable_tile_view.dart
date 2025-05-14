@@ -51,6 +51,28 @@ class ExpandableTileView extends StatefulWidget {
     );
   }
 
+  /// No animation
+  factory ExpandableTileView.noneAnimation({
+    required String title,
+    required Widget child,
+    double? width,
+    Color? titleBGColor,
+    TextStyle? titleTextStyle,
+    bool widthFill = true,
+    bool posHorizontal = false,
+  }) {
+    return ExpandableTileView._(
+      title: title,
+      animationType: ExpandableAnimation.none,
+      width: width,
+      titleBGColor: titleBGColor,
+      titleTextStyle: titleTextStyle,
+      widthFill: widthFill,
+      posHorizontal: posHorizontal,
+      child: child,
+    );
+  }
+
   /// Animation Fade
   factory ExpandableTileView.animatedFade({
     required String title,

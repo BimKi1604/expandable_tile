@@ -1,9 +1,8 @@
-import 'package:expandable_tile/src/controller/expand_controller.dart';
+import 'package:expandable_tile/expandable_tile.dart';
 import 'package:expandable_tile/src/theme/styles.dart';
 import 'package:expandable_tile/src/utils/animation_utils.dart';
 import 'package:expandable_tile/src/utils/click_widget.dart';
 import 'package:expandable_tile/src/widget/expand_section.dart';
-import 'package:expandable_tile/src/widget/expandable_tile_view.dart';
 import 'package:flutter/material.dart';
 
 /// Expandable Tile State control state expand
@@ -56,6 +55,30 @@ class ExpandableTileViewState extends State<ExpandableTileView> {
     return MediaQuery.sizeOf(context).width;
   }
 
+  Widget sectionWidget() {
+    return ExpandSection(
+      expand: controller.isExpand,
+      animationType: widget.animationType,
+      axisExpand: controller.axisExpand,
+      child: widget.animationType == ExpandableAnimation.none ? Visibility(
+        visible: controller.isExpand,
+          child: controller.expanded!
+      ) : AnimatedSwitcher(
+          duration: Duration(
+              milliseconds: AnimationUtils.getMilByAnimationType(
+                  widget.animationType)),
+          child: controller.isExpand
+              ? KeyedSubtree(
+            key: const ValueKey('expanded'),
+            child: controller.expanded!,
+          )
+              : const KeyedSubtree(
+            key: ValueKey('collapsed'),
+            child: SizedBox.shrink(),
+          )),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -88,46 +111,12 @@ class ExpandableTileViewState extends State<ExpandableTileView> {
             ),
             if (widget.posHorizontal)
               Flexible(
-                child: ExpandSection(
-                  expand: controller.isExpand,
-                  animationType: widget.animationType,
-                  axisExpand: controller.axisExpand,
-                  child: AnimatedSwitcher(
-                      duration: Duration(
-                          milliseconds: AnimationUtils.getMilByAnimationType(
-                              widget.animationType)),
-                      child: controller.isExpand
-                          ? KeyedSubtree(
-                              key: const ValueKey('expanded'),
-                              child: controller.expanded!,
-                            )
-                          : const KeyedSubtree(
-                              key: ValueKey('collapsed'),
-                              child: SizedBox.shrink(),
-                            )),
-                ),
+                child: sectionWidget(),
               ),
           ],
         ),
         if (!widget.posHorizontal)
-          ExpandSection(
-            expand: controller.isExpand,
-            animationType: widget.animationType,
-            axisExpand: controller.axisExpand,
-            child: AnimatedSwitcher(
-                duration: Duration(
-                    milliseconds: AnimationUtils.getMilByAnimationType(
-                        widget.animationType)),
-                child: controller.isExpand
-                    ? KeyedSubtree(
-                        key: const ValueKey('expanded'),
-                        child: controller.expanded!,
-                      )
-                    : const KeyedSubtree(
-                        key: ValueKey('collapsed'),
-                        child: SizedBox.shrink(),
-                      )),
-          ),
+          sectionWidget(),
       ],
     );
   }

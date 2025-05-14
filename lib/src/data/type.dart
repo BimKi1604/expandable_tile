@@ -16,5 +16,8 @@ enum ExpandableAnimation {
   fade,
 
   /// scale animation
-  scale
+  scale,
+
+  /// no animation
+  none
 }

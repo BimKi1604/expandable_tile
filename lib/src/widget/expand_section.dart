@@ -82,7 +82,6 @@ class _ExpandSectionState extends State<ExpandSection>
       AxisExpand axisExpand) {
     final axis =
         axisExpand == AxisExpand.horizontal ? Axis.horizontal : Axis.vertical;
-
     return {
       ExpandableAnimation.def: (child, animation) => ClipRect(
             child: SizeTransition(
@@ -96,6 +95,7 @@ class _ExpandSectionState extends State<ExpandSection>
           FadeTransition(opacity: animation, child: child),
       ExpandableAnimation.scale: (child, animation) =>
           ScaleTransition(scale: animation, child: child),
+      ExpandableAnimation.none: (child, animation) => child
     };
   }
 

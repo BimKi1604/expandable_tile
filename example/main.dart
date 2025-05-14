@@ -46,6 +46,19 @@ class _ExpandedPageState extends State<ExpandedPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
+              const Text("None animation",
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.deepOrange)),
+              Padding(
+                padding: const EdgeInsets.only(left: 5.0),
+                child: ExpandableTileView.noneAnimation(
+                  title: "No animation",
+                  child: const Text(
+                      "This is demo for expand text without animation. The Child is Text"),
+                ),
+              ),
               const Text("Vertical position",
                   style: TextStyle(
                       fontSize: 20,
