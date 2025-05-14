@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.0.2] - 2025-05-14
+### Update
+- Upload demo video
+
 ## [1.0.1] - 2025-05-14
 ### Update
 - Upload demo video

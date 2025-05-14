@@ -2,6 +2,7 @@
 enum AxisExpand {
   /// Expands horizontally.
   horizontal,
+
   /// Expands vertically.
   vertical
 }
@@ -10,8 +11,10 @@ enum AxisExpand {
 enum ExpandableAnimation {
   /// default size animation
   def,
+
   /// fade animation
   fade,
+
   /// scale animation
   scale
 }

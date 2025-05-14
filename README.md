@@ -119,7 +119,7 @@ To install the `expandable_tile` package, add the following to your `pubspec.yam
 
 ```yaml
 dependencies:
-  expandable_tile: ^1.0.1
+  expandable_tile: ^1.0.2
 ```
 ## 📦 Supported SDKs
 
