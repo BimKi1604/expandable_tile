@@ -19,5 +19,10 @@ enum ExpandableAnimation {
   scale,
 
   /// no animation
-  none
+  none,
+}
+
+/// The image type
+enum ImageType {
+  online, localFile, asset
 }

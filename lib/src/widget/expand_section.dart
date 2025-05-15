@@ -79,7 +79,9 @@ class _ExpandSectionState extends State<ExpandSection>
   }
 
   Map<ExpandableAnimation, AnimationBuilder> getAnimationBuilders(
-      AxisExpand axisExpand) {
+      AxisExpand axisExpand, {
+        AnimationBuilder? customBuilder,
+      }) {
     final axis =
         axisExpand == AxisExpand.horizontal ? Axis.horizontal : Axis.vertical;
     return {
@@ -95,7 +97,7 @@ class _ExpandSectionState extends State<ExpandSection>
           FadeTransition(opacity: animation, child: child),
       ExpandableAnimation.scale: (child, animation) =>
           ScaleTransition(scale: animation, child: child),
-      ExpandableAnimation.none: (child, animation) => child
+      ExpandableAnimation.none: (child, animation) => child,
     };
   }
 
