@@ -4,6 +4,7 @@ import 'package:expandable_tile/src/utils/animation_utils.dart';
 import 'package:expandable_tile/src/utils/click_widget.dart';
 import 'package:expandable_tile/src/utils/image_utils.dart';
 import 'package:expandable_tile/src/widget/expand_section.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'expandable_image_view.dart';
@@ -24,30 +25,6 @@ class ExpandableImageViewState extends State<ExpandableImageView> {
 
   void _onControllerChanged() {
     if (mounted) setState(() {});
-  }
-
-  /// Calculate the actual size of the text string.
-  Size calculateTextSize(
-      String text, {
-        required TextStyle style,
-        int maxLines = 1,
-        double maxWidth = double.infinity,
-      }) {
-    final TextPainter textPainter = TextPainter(
-      text: TextSpan(text: text, style: style),
-      maxLines: maxLines,
-      textDirection: TextDirection.ltr,
-    )..layout(maxWidth: maxWidth);
-    return textPainter.size;
-  }
-
-  /// default width
-  double defaultSize() {
-    if (widget.posHorizontal) {
-      return MediaQuery.sizeOf(context).width * .35;
-    }
-    if (widget.size != null) return widget.size!;
-    return MediaQuery.sizeOf(context).width * .5;
   }
 
   Widget sectionWidget() {
@@ -85,8 +62,6 @@ class ExpandableImageViewState extends State<ExpandableImageView> {
           children: [
             Flexible(
               child: Container(
-                width: defaultSize(),
-                height: defaultSize(),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5.0),
                   color: widget.titleBGColor,
@@ -96,24 +71,7 @@ class ExpandableImageViewState extends State<ExpandableImageView> {
                   onTap: controller.toggleExpand,
                   child: Padding(
                     padding: const EdgeInsets.symmetric(vertical: 5),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        ImageUtils.getImageWidgetByType(ImageUtils.getImageType(controller.title ?? ""), controller.title ?? ""),
-                        Visibility(
-                            visible: !widget.posHorizontal,
-                            child: Padding(
-                              padding: const EdgeInsets.only(left: 5.0),
-                              child: AnimatedRotation(
-                                turns: controller.isExpand ? -0.25 : 0, // 0 = down, -0.25 = right (90 degree)
-                                duration: Duration(milliseconds: AnimationUtils.getMilByAnimationType(widget.animationType)),
-                                curve: Curves.easeInOut,
-                                child: const Icon(Icons.arrow_drop_down, size: 28,),
-                              ),
-                            )
-                        )
-                      ],
-                    ),
+                    child: ImageUtils.getImageWidgetByType(ImageUtils.getImageType(controller.title ?? ""), controller.title ?? ""),
                   ),
                 ),
               ),
