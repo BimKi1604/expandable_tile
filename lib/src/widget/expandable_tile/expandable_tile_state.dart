@@ -3,9 +3,7 @@ import 'package:expandable_tile/src/theme/styles.dart';
 import 'package:expandable_tile/src/utils/animation_utils.dart';
 import 'package:expandable_tile/src/utils/click_widget.dart';
 import 'package:expandable_tile/src/widget/expand_section.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 /// Expandable Tile State control state expand
 class ExpandableTileViewState extends State<ExpandableTileView> {
@@ -48,12 +46,6 @@ class ExpandableTileViewState extends State<ExpandableTileView> {
           40);
     }
     if (widget.width != null) return widget.width!;
-    // if (widget.widthFill) {
-    //   return (calculateTextSize(controller.title ?? "",
-    //               style: widget.titleTextStyle ?? AppStyles.titleText)
-    //           .width +
-    //       40);
-    // }
     return MediaQuery.sizeOf(context).width;
   }
 

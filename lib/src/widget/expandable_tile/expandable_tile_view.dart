@@ -13,7 +13,6 @@ class ExpandableTileView extends StatefulWidget {
   final double? width;
   final Color? titleBGColor;
   final TextStyle? titleTextStyle;
-  final bool widthFill;
   final bool posHorizontal;
   final ExpandableAnimation animationType;
 
@@ -25,7 +24,6 @@ class ExpandableTileView extends StatefulWidget {
       this.axis = AxisExpand.vertical,
       this.titleBGColor,
       this.titleTextStyle,
-      this.widthFill = true,
       this.posHorizontal = false,
       this.animationType = ExpandableAnimation.def});
 
@@ -36,7 +34,6 @@ class ExpandableTileView extends StatefulWidget {
     double? width,
     Color? titleBGColor,
     TextStyle? titleTextStyle,
-    bool widthFill = true,
     bool posHorizontal = false,
   }) {
     return ExpandableTileView._(
@@ -45,7 +42,6 @@ class ExpandableTileView extends StatefulWidget {
       width: width,
       titleBGColor: titleBGColor,
       titleTextStyle: titleTextStyle,
-      widthFill: widthFill,
       posHorizontal: posHorizontal,
       child: child,
     );
@@ -58,7 +54,6 @@ class ExpandableTileView extends StatefulWidget {
     double? width,
     Color? titleBGColor,
     TextStyle? titleTextStyle,
-    bool widthFill = true,
     bool posHorizontal = false,
   }) {
     return ExpandableTileView._(
@@ -67,7 +62,6 @@ class ExpandableTileView extends StatefulWidget {
       width: width,
       titleBGColor: titleBGColor,
       titleTextStyle: titleTextStyle,
-      widthFill: widthFill,
       posHorizontal: posHorizontal,
       child: child,
     );
@@ -80,7 +74,6 @@ class ExpandableTileView extends StatefulWidget {
     double? width,
     Color? titleBGColor,
     TextStyle? titleTextStyle,
-    bool widthFill = true,
     bool posHorizontal = false,
   }) {
     return ExpandableTileView._(
@@ -89,7 +82,6 @@ class ExpandableTileView extends StatefulWidget {
       width: width,
       titleBGColor: titleBGColor,
       titleTextStyle: titleTextStyle,
-      widthFill: widthFill,
       posHorizontal: posHorizontal,
       child: child,
     );
@@ -103,7 +95,6 @@ class ExpandableTileView extends StatefulWidget {
     double? width,
     Color? titleBGColor,
     TextStyle? titleTextStyle,
-    bool widthFill = true,
     bool posHorizontal = false,
   }) {
     return ExpandableTileView._(
@@ -113,7 +104,6 @@ class ExpandableTileView extends StatefulWidget {
       width: width,
       titleBGColor: titleBGColor,
       titleTextStyle: titleTextStyle,
-      widthFill: widthFill,
       posHorizontal: posHorizontal,
       child: child,
     );
