@@ -43,12 +43,14 @@ A Flutter package that helps you expand or collapse widgets to show/hide content
 ## 🏗️ Architecture & Technologies
 
 
-| Component             | Description                                                     |
-|-----------------------|-----------------------------------------------------------------|
-| `ExpandableTileView`  | Main widget to expand/collapse content with animation           |
-| `ExpandableAnimation` | Enum to select animation type (e.g., size, fade, scale, def)    |
-| `AxisExpand`          | Enum to control direction of expansion (horizontal or vertical) |
-| `ExpandTileController`| Main controller to control state of expand (isExpand,axis,...)  |
+| Component              | Description                                                     |
+|------------------------|-----------------------------------------------------------------|
+| `ExpandableTileView`   | Main widget to expand/collapse content with animation           |
+| `ExpandableAnimation`  | Enum to select animation type (e.g., size, fade, scale, def)    |
+| `AxisExpand`           | Enum to control direction of expansion (horizontal or vertical) |
+| `ExpandableAnimation`  | Enum to control animation of expansion                          |
+| `ImageType`            | Enum to control image in app                                    |
+| `ExpandTileController` | Main controller to control state of expand (isExpand,axis,...)  |
 
 ---
 
@@ -90,7 +92,7 @@ ExpandableTileView.animatedDef(
 
 ##### Child Vertically (Size animation)
 
-##### Title Text
+##### Text Title
 
 ```dart
 ExpandableTileView.animatedDef(
@@ -100,7 +102,7 @@ ExpandableTileView.animatedDef(
 )
 ```
 
-##### Title Image
+##### Image Title 
 
 ```dart
 ExpandableImageView.animatedDef(
@@ -109,7 +111,7 @@ ExpandableImageView.animatedDef(
 )
 ```
 
-##### Title Custom
+##### Custom Title
 
 ```dart
 ExpandableCustomView.animatedDef(
@@ -127,7 +129,7 @@ ExpandableCustomView.animatedDef(
 
 #### 🌫️ Fade Animation
 
-##### Title Text
+##### Text Title
 
 ```dart
 ExpandableTileView.animatedFade(
@@ -136,7 +138,7 @@ ExpandableTileView.animatedFade(
 )
 ```
 
-##### Title Image
+##### Image Title
 
 ```dart
 ExpandableImageView.animatedFade(
@@ -145,7 +147,7 @@ ExpandableImageView.animatedFade(
 )
 ```
 
-##### Title Custom
+##### Custom Title
 
 ```dart
   ExpandableCustomView.animatedFade(
@@ -165,7 +167,7 @@ ExpandableImageView.animatedFade(
 
 #### 🔍 Scale Animation
 
-##### Title Text
+##### Text Title
 
 ```dart
 ExpandableTileView.animatedScale(
@@ -174,7 +176,7 @@ ExpandableTileView.animatedScale(
 )
 ```
 
-##### Title Image
+##### Image Title
 
 ```dart
 ExpandableImageView.animatedScale(
@@ -183,7 +185,7 @@ ExpandableImageView.animatedScale(
 )
 ```
 
-##### Title Custom
+##### Custom Title
 
 ```dart
   ExpandableCustomView.animatedScale(
@@ -201,11 +203,38 @@ ExpandableImageView.animatedScale(
 
 #### None Animation
 
+##### Text Title
+
 ```dart
 ExpandableTileView.noneAnimation(
   title: "No animation",
   child: Text("Scaling animation!"),
 )
+```
+
+##### Image Title
+
+```dart
+ExpandableImageView.noneAnimation(
+  src:"https://www.centrale-canine.fr/sites/default/files/2024-11/Fiche%20de%20race%20banni%C3%A8re%20corgi%20pembroke.jpg",
+  child: Text("None animation!"),
+)
+```
+
+##### Custom Title
+
+```dart
+  ExpandableCustomView.noneAnimation(
+     title: const Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text("Custom Title",style: TextStyle(fontSize: 14, color: Colors.redAccent),),
+        Text("No animation",style: TextStyle(fontSize: 14, color: Colors.green),),
+        Icon(Icons.check, size: 27, color: Colors.redAccent),
+      ],
+     ),
+    child: Text("None animation!"),
+  )
 ```
 
 ---
@@ -216,7 +245,7 @@ To install the `expandable_tile` package, add the following to your `pubspec.yam
 
 ```yaml
 dependencies:
-  expandable_tile: ^1.0.2
+  expandable_tile: ^1.0.4
 ```
 ## 📦 Supported SDKs
 

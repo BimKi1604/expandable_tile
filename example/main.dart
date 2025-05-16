@@ -1,8 +1,4 @@
 import 'package:expandable_tile/expandable_tile.dart';
-import 'package:expandable_tile/src/data/type.dart';
-import 'package:expandable_tile/src/models/ratio.dart';
-import 'package:expandable_tile/src/widget/expandable_image/expandable_image_view.dart';
-import 'package:expandable_tile/src/widget/expandable_tile/expandable_tile_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {

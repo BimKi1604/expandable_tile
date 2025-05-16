@@ -60,7 +60,7 @@ class ExpandableCustomViewState extends State<ExpandableCustomView> {
             Flexible(
               flex: widget.ratio.left,
               child: ClickWidget(
-                  color: Colors.white.withOpacity(0.3),
+                  color: Colors.white.withAlpha((0.5 * 255).round()),
                   onTap: controller.toggleExpand,
                   child: widget.title),
             ),

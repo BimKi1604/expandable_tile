@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.0.4] - 2025-05-14
+### Update
+- fix: color splash custom title widget
+- fix: readme
+
 ## [1.0.3] - 2025-05-16
 ### Update
 - feature: Add none animation type
