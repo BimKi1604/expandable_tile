@@ -1,6 +1,6 @@
 name: expandable_tile
 description: "A simple and customizable Flutter widget that expands or collapses when tapped.Perfect for showing and hiding content dynamically with a clean, interactive UI."
-version: 1.0.2
+version: 1.0.3
 license: MIT
 homepage: https://github.com/BimKi1604/expandable_tile
 repository: https://github.com/BimKi1604/expandable_tile
@@ -49,4 +49,6 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/
-    - assets/demo.gif
+    - assets/demo_custom_title.gif
+    - assets/demo_image.gif
+    - assets/demo_text.gif

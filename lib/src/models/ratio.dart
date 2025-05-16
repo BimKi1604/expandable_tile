@@ -13,10 +13,10 @@ class Ratio {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-          other is Ratio &&
-              runtimeType == other.runtimeType &&
-              left == other.left &&
-              right == other.right;
+      other is Ratio &&
+          runtimeType == other.runtimeType &&
+          left == other.left &&
+          right == other.right;
 
   @override
   int get hashCode => left.hashCode ^ right.hashCode;

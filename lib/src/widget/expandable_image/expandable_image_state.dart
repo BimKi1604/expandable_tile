@@ -32,22 +32,22 @@ class ExpandableImageViewState extends State<ExpandableImageView> {
       expand: controller.isExpand,
       animationType: widget.animationType,
       axisExpand: controller.axisExpand,
-      child: widget.animationType == ExpandableAnimation.none ? Visibility(
-          visible: controller.isExpand,
-          child: controller.expanded!
-      ) : AnimatedSwitcher(
-          duration: Duration(
-              milliseconds: AnimationUtils.getMilByAnimationType(
-                  widget.animationType)),
-          child: controller.isExpand
-              ? KeyedSubtree(
-            key: const ValueKey('expanded'),
-            child: controller.expanded!,
-          )
-              : const KeyedSubtree(
-            key: ValueKey('collapsed'),
-            child: SizedBox.shrink(),
-          )),
+      child: widget.animationType == ExpandableAnimation.none
+          ? Visibility(
+              visible: controller.isExpand, child: controller.expanded!)
+          : AnimatedSwitcher(
+              duration: Duration(
+                  milliseconds: AnimationUtils.getMilByAnimationType(
+                      widget.animationType)),
+              child: controller.isExpand
+                  ? KeyedSubtree(
+                      key: const ValueKey('expanded'),
+                      child: controller.expanded!,
+                    )
+                  : const KeyedSubtree(
+                      key: ValueKey('collapsed'),
+                      child: SizedBox.shrink(),
+                    )),
     );
   }
 
@@ -72,7 +72,9 @@ class ExpandableImageViewState extends State<ExpandableImageView> {
                   onTap: controller.toggleExpand,
                   child: Padding(
                     padding: const EdgeInsets.symmetric(vertical: 5),
-                    child: ImageUtils.getImageWidgetByType(ImageUtils.getImageType(controller.title ?? ""), controller.title ?? ""),
+                    child: ImageUtils.getImageWidgetByType(
+                        ImageUtils.getImageType(controller.title ?? ""),
+                        controller.title ?? ""),
                   ),
                 ),
               ),
@@ -84,8 +86,7 @@ class ExpandableImageViewState extends State<ExpandableImageView> {
               ),
           ],
         ),
-        if (!widget.posHorizontal)
-          sectionWidget(),
+        if (!widget.posHorizontal) sectionWidget(),
       ],
     );
   }

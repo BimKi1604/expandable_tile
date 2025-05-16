@@ -26,22 +26,22 @@ class ExpandableCustomViewState extends State<ExpandableCustomView> {
       expand: controller.isExpand,
       animationType: widget.animationType,
       axisExpand: controller.axisExpand,
-      child: widget.animationType == ExpandableAnimation.none ? Visibility(
-          visible: controller.isExpand,
-          child: controller.expanded!
-      ) : AnimatedSwitcher(
-          duration: Duration(
-              milliseconds: AnimationUtils.getMilByAnimationType(
-                  widget.animationType)),
-          child: controller.isExpand
-              ? KeyedSubtree(
-            key: const ValueKey('expanded'),
-            child: controller.expanded!,
-          )
-              : const KeyedSubtree(
-            key: ValueKey('collapsed'),
-            child: SizedBox.shrink(),
-          )),
+      child: widget.animationType == ExpandableAnimation.none
+          ? Visibility(
+              visible: controller.isExpand, child: controller.expanded!)
+          : AnimatedSwitcher(
+              duration: Duration(
+                  milliseconds: AnimationUtils.getMilByAnimationType(
+                      widget.animationType)),
+              child: controller.isExpand
+                  ? KeyedSubtree(
+                      key: const ValueKey('expanded'),
+                      child: controller.expanded!,
+                    )
+                  : const KeyedSubtree(
+                      key: ValueKey('collapsed'),
+                      child: SizedBox.shrink(),
+                    )),
     );
   }
 
@@ -58,10 +58,9 @@ class ExpandableCustomViewState extends State<ExpandableCustomView> {
             Flexible(
               flex: widget.ratio.left,
               child: ClickWidget(
-                color: Colors.white.withOpacity(0.3),
-                onTap: controller.toggleExpand,
-                  child: widget.title
-              ),
+                  color: Colors.white.withOpacity(0.3),
+                  onTap: controller.toggleExpand,
+                  child: widget.title),
             ),
             const SizedBox(width: 5.0),
             if (widget.posHorizontal)
@@ -71,8 +70,7 @@ class ExpandableCustomViewState extends State<ExpandableCustomView> {
               ),
           ],
         ),
-        if (!widget.posHorizontal)
-          sectionWidget(),
+        if (!widget.posHorizontal) sectionWidget(),
       ],
     );
   }

@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 
 /// The class helper for image
 class ImageUtils {
-
   /// Get Image type from src params
   static ImageType getImageType(String src) {
     if (src.startsWith('http://') || src.startsWith('https://')) {
@@ -25,12 +24,18 @@ class ImageUtils {
     switch (type) {
       /// Online image
       case ImageType.online:
-        return Image.network(src, fit: BoxFit.cover,);
+        return Image.network(
+          src,
+          fit: BoxFit.cover,
+        );
+
       /// Local file path
       case ImageType.localFile:
         return Image.file(File(src), fit: BoxFit.cover);
+
       /// Default is asset
-      default: return Image.asset(src, fit: BoxFit.cover);
+      default:
+        return Image.asset(src, fit: BoxFit.cover);
     }
   }
 }

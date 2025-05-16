@@ -54,22 +54,22 @@ class ExpandableTileViewState extends State<ExpandableTileView> {
       expand: controller.isExpand,
       animationType: widget.animationType,
       axisExpand: controller.axisExpand,
-      child: widget.animationType == ExpandableAnimation.none ? Visibility(
-        visible: controller.isExpand,
-          child: controller.expanded!
-      ) : AnimatedSwitcher(
-          duration: Duration(
-              milliseconds: AnimationUtils.getMilByAnimationType(
-                  widget.animationType)),
-          child: controller.isExpand
-              ? KeyedSubtree(
-            key: const ValueKey('expanded'),
-            child: controller.expanded!,
-          )
-              : const KeyedSubtree(
-            key: ValueKey('collapsed'),
-            child: SizedBox.shrink(),
-          )),
+      child: widget.animationType == ExpandableAnimation.none
+          ? Visibility(
+              visible: controller.isExpand, child: controller.expanded!)
+          : AnimatedSwitcher(
+              duration: Duration(
+                  milliseconds: AnimationUtils.getMilByAnimationType(
+                      widget.animationType)),
+              child: controller.isExpand
+                  ? KeyedSubtree(
+                      key: const ValueKey('expanded'),
+                      child: controller.expanded!,
+                    )
+                  : const KeyedSubtree(
+                      key: ValueKey('collapsed'),
+                      child: SizedBox.shrink(),
+                    )),
     );
   }
 
@@ -102,22 +102,30 @@ class ExpandableTileViewState extends State<ExpandableTileView> {
                             alignment: Alignment.centerLeft,
                             child: Text(
                               controller.title ?? "",
-                              style: widget.titleTextStyle ?? AppStyles.titleText,
+                              style:
+                                  widget.titleTextStyle ?? AppStyles.titleText,
                             ),
                           ),
                         ),
                         Visibility(
-                            visible: !widget.posHorizontal,
+                            visible: !widget.posHorizontal && widget.showIcon,
                             child: Padding(
                               padding: const EdgeInsets.only(left: 5.0),
                               child: AnimatedRotation(
-                                turns: controller.isExpand ? -0.25 : 0, // 0 = down, -0.25 = right (90 degree)
-                                duration: Duration(milliseconds: AnimationUtils.getMilByAnimationType(widget.animationType)),
+                                turns: controller.isExpand
+                                    ? -0.25
+                                    : 0, // 0 = down, -0.25 = right (90 degree)
+                                duration: Duration(
+                                    milliseconds:
+                                        AnimationUtils.getMilByAnimationType(
+                                            widget.animationType)),
                                 curve: Curves.easeInOut,
-                                child: const Icon(Icons.arrow_drop_down, size: 28,),
+                                child: const Icon(
+                                  Icons.arrow_drop_down,
+                                  size: 28,
+                                ),
                               ),
-                            )
-                        )
+                            ))
                       ],
                     ),
                   ),
@@ -131,8 +139,7 @@ class ExpandableTileViewState extends State<ExpandableTileView> {
               ),
           ],
         ),
-        if (!widget.posHorizontal)
-          sectionWidget(),
+        if (!widget.posHorizontal) sectionWidget(),
       ],
     );
   }

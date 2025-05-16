@@ -152,7 +152,8 @@ class _ExpandedPageState extends State<ExpandedPage> {
         Padding(
           padding: const EdgeInsets.only(left: 5.0),
           child: ExpandableImageView.noneAnimation(
-            src: "https://www.centrale-canine.fr/sites/default/files/2024-11/Fiche%20de%20race%20banni%C3%A8re%20corgi%20pembroke.jpg",
+            src:
+                "https://www.centrale-canine.fr/sites/default/files/2024-11/Fiche%20de%20race%20banni%C3%A8re%20corgi%20pembroke.jpg",
             child: const Text(
                 "This is demo for expand image without animation. The Child is Text"),
           ),
@@ -165,7 +166,8 @@ class _ExpandedPageState extends State<ExpandedPage> {
         Padding(
           padding: const EdgeInsets.only(left: 5.0),
           child: ExpandableImageView.animatedDef(
-            src: "https://www.centrale-canine.fr/sites/default/files/2024-11/Fiche%20de%20race%20banni%C3%A8re%20corgi%20pembroke.jpg",
+            src:
+                "https://www.centrale-canine.fr/sites/default/files/2024-11/Fiche%20de%20race%20banni%C3%A8re%20corgi%20pembroke.jpg",
             child: const Text(
                 "This is demo for expand image with default animation. The Child is Text"),
           ),
@@ -173,7 +175,8 @@ class _ExpandedPageState extends State<ExpandedPage> {
         Padding(
           padding: const EdgeInsets.only(left: 5.0),
           child: ExpandableImageView.animatedFade(
-            src: "https://file.hstatic.net/1000292100/article/61312315_440746569804333_4727353524977926144_n_9a585e47ace64345af4b2dd9bc1f45bb.jpg",
+            src:
+                "https://file.hstatic.net/1000292100/article/61312315_440746569804333_4727353524977926144_n_9a585e47ace64345af4b2dd9bc1f45bb.jpg",
             child: const Text(
                 "This is demo for expand image with fade animation. The Child is Text"),
           ),
@@ -181,7 +184,8 @@ class _ExpandedPageState extends State<ExpandedPage> {
         Padding(
           padding: const EdgeInsets.only(left: 5.0),
           child: ExpandableImageView.animatedScale(
-            src: "https://file.hstatic.net/1000292100/file/img_1907_grande_e05accd5a03247069db4f3169cfb8b11_grande.jpg",
+            src:
+                "https://file.hstatic.net/1000292100/file/img_1907_grande_e05accd5a03247069db4f3169cfb8b11_grande.jpg",
             child: const Text(
                 "This is demo for expand image with scale animation. The Child is Text"),
           ),
@@ -195,7 +199,8 @@ class _ExpandedPageState extends State<ExpandedPage> {
           padding: const EdgeInsets.only(left: 5.0),
           child: ExpandableImageView.animatedFade(
             posHorizontal: true,
-            src: "https://file.hstatic.net/1000292100/article/61312315_440746569804333_4727353524977926144_n_9a585e47ace64345af4b2dd9bc1f45bb.jpg",
+            src:
+                "https://file.hstatic.net/1000292100/article/61312315_440746569804333_4727353524977926144_n_9a585e47ace64345af4b2dd9bc1f45bb.jpg",
             child: const Text(
                 "This is demo for expand image with fade animation. The Child is Text"),
           ),
@@ -204,7 +209,8 @@ class _ExpandedPageState extends State<ExpandedPage> {
           padding: const EdgeInsets.only(left: 5.0),
           child: ExpandableImageView.animatedScale(
             posHorizontal: true,
-            src: "https://file.hstatic.net/1000292100/file/img_1907_grande_e05accd5a03247069db4f3169cfb8b11_grande.jpg",
+            src:
+                "https://file.hstatic.net/1000292100/file/img_1907_grande_e05accd5a03247069db4f3169cfb8b11_grande.jpg",
             child: const Text(
                 "This is demo for expand image with scale animation. The Child is Text"),
           ),
@@ -228,11 +234,17 @@ class _ExpandedPageState extends State<ExpandedPage> {
             title: const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Custom Title", style: TextStyle(fontSize: 14, color: Colors.redAccent),),
-                Text("No animation", style: TextStyle(fontSize: 14, color: Colors.green),),
+                Text(
+                  "Custom Title",
+                  style: TextStyle(fontSize: 14, color: Colors.redAccent),
+                ),
+                Text(
+                  "No animation",
+                  style: TextStyle(fontSize: 14, color: Colors.green),
+                ),
                 Icon(Icons.check, size: 27, color: Colors.redAccent),
               ],
-            ) ,
+            ),
             child: const Text(
                 "This is demo for expand custom title without animation. The Child is Text"),
           ),
@@ -248,13 +260,19 @@ class _ExpandedPageState extends State<ExpandedPage> {
             title: const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Custom Title", style: TextStyle(fontSize: 14, color: Colors.redAccent),),
-                Text("Default animation", style: TextStyle(fontSize: 14, color: Colors.green),),
+                Text(
+                  "Custom Title",
+                  style: TextStyle(fontSize: 14, color: Colors.redAccent),
+                ),
+                Text(
+                  "Default animation",
+                  style: TextStyle(fontSize: 14, color: Colors.green),
+                ),
                 Icon(Icons.check, size: 27, color: Colors.redAccent),
               ],
-            ) ,
+            ),
             child: const Text(
-                "This is demo for expand image with default animation. The Child is Text"),
+                "This is demo for expand custom with default animation. The Child is Text"),
           ),
         ),
         Padding(
@@ -263,13 +281,19 @@ class _ExpandedPageState extends State<ExpandedPage> {
             title: const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Custom Title", style: TextStyle(fontSize: 14, color: Colors.redAccent),),
-                Text("Fade animation", style: TextStyle(fontSize: 14, color: Colors.green),),
+                Text(
+                  "Custom Title",
+                  style: TextStyle(fontSize: 14, color: Colors.redAccent),
+                ),
+                Text(
+                  "Fade animation",
+                  style: TextStyle(fontSize: 14, color: Colors.green),
+                ),
                 Icon(Icons.check, size: 27, color: Colors.redAccent),
               ],
-            ) ,
+            ),
             child: const Text(
-                "This is demo for expand image with fade animation. The Child is Text"),
+                "This is demo for expand custom with fade animation. The Child is Text"),
           ),
         ),
         Padding(
@@ -278,11 +302,17 @@ class _ExpandedPageState extends State<ExpandedPage> {
             title: const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Custom Title", style: TextStyle(fontSize: 14, color: Colors.redAccent),),
-                Text("Scale animation", style: TextStyle(fontSize: 14, color: Colors.green),),
+                Text(
+                  "Custom Title",
+                  style: TextStyle(fontSize: 14, color: Colors.redAccent),
+                ),
+                Text(
+                  "Scale animation",
+                  style: TextStyle(fontSize: 14, color: Colors.green),
+                ),
                 Icon(Icons.check, size: 27, color: Colors.redAccent),
               ],
-            ) ,
+            ),
             child: const Text(
                 "This is demo for expand image with scale animation. The Child is Text"),
           ),
@@ -296,15 +326,21 @@ class _ExpandedPageState extends State<ExpandedPage> {
           padding: const EdgeInsets.only(left: 5.0),
           child: ExpandableCustomView.animatedFade(
             posHorizontal: true,
-            ratio: const Ratio(7,3),
+            ratio: const Ratio(7, 3),
             title: const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Custom Title", style: TextStyle(fontSize: 14, color: Colors.redAccent),),
-                Text("Fade animation", style: TextStyle(fontSize: 14, color: Colors.green),),
+                Text(
+                  "Custom Title",
+                  style: TextStyle(fontSize: 14, color: Colors.redAccent),
+                ),
+                Text(
+                  "Fade animation",
+                  style: TextStyle(fontSize: 14, color: Colors.green),
+                ),
                 Icon(Icons.check, size: 27, color: Colors.redAccent),
               ],
-            ) ,
+            ),
             child: const Text(
                 "This is demo for expand image with fade animation. The Child is Text"),
           ),
@@ -313,15 +349,21 @@ class _ExpandedPageState extends State<ExpandedPage> {
           padding: const EdgeInsets.only(left: 5.0),
           child: ExpandableCustomView.animatedScale(
             posHorizontal: true,
-            ratio: const Ratio(7,3),
+            ratio: const Ratio(7, 3),
             title: const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Custom Title", style: TextStyle(fontSize: 14, color: Colors.redAccent),),
-                Text("Scale animation", style: TextStyle(fontSize: 14, color: Colors.green),),
+                Text(
+                  "Custom Title",
+                  style: TextStyle(fontSize: 14, color: Colors.redAccent),
+                ),
+                Text(
+                  "Scale animation",
+                  style: TextStyle(fontSize: 14, color: Colors.green),
+                ),
                 Icon(Icons.check, size: 27, color: Colors.redAccent),
               ],
-            ) ,
+            ),
             child: const Text(
                 "This is demo for expand image with scale animation. The Child is Text"),
           ),
@@ -341,17 +383,12 @@ class _ExpandedPageState extends State<ExpandedPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               ExpandableTileView.animatedDef(
-                  title: "Demo expandable text",
-                  child: expandableText()
-              ),
+                  title: "Demo expandable text", child: expandableText()),
               ExpandableTileView.animatedDef(
-                  title: "Demo expandable image",
-                  child: expandImage()
-              ),
+                  title: "Demo expandable image", child: expandImage()),
               ExpandableTileView.animatedDef(
                   title: "Demo expandable custom title",
-                  child: expandableCustom()
-              ),
+                  child: expandableCustom()),
             ],
           ),
         ),

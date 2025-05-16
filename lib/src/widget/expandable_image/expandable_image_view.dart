@@ -10,7 +10,6 @@ class ExpandableImageView extends StatefulWidget {
   final String src;
   final Widget child;
   final AxisExpand axis;
-  final double? size;
   final Color? titleBGColor;
   final TextStyle? titleTextStyle;
   final bool posHorizontal;
@@ -19,19 +18,17 @@ class ExpandableImageView extends StatefulWidget {
   /// Private constructor
   const ExpandableImageView._(
       {required this.src,
-        required this.child,
-        this.size,
-        this.axis = AxisExpand.vertical,
-        this.titleBGColor,
-        this.titleTextStyle,
-        this.posHorizontal = false,
-        this.animationType = ExpandableAnimation.def});
+      required this.child,
+      this.axis = AxisExpand.vertical,
+      this.titleBGColor,
+      this.titleTextStyle,
+      this.posHorizontal = false,
+      this.animationType = ExpandableAnimation.def});
 
   /// Animation Scale
   factory ExpandableImageView.animatedScale({
     required String src,
     required Widget child,
-    double? size,
     Color? titleBGColor,
     TextStyle? titleTextStyle,
     bool posHorizontal = false,
@@ -39,7 +36,6 @@ class ExpandableImageView extends StatefulWidget {
     return ExpandableImageView._(
       src: src,
       animationType: ExpandableAnimation.scale,
-      size: size,
       titleBGColor: titleBGColor,
       titleTextStyle: titleTextStyle,
       posHorizontal: posHorizontal,
@@ -51,7 +47,6 @@ class ExpandableImageView extends StatefulWidget {
   factory ExpandableImageView.noneAnimation({
     required String src,
     required Widget child,
-    double? size,
     Color? titleBGColor,
     TextStyle? titleTextStyle,
     bool posHorizontal = false,
@@ -59,7 +54,6 @@ class ExpandableImageView extends StatefulWidget {
     return ExpandableImageView._(
       src: src,
       animationType: ExpandableAnimation.none,
-      size: size,
       titleBGColor: titleBGColor,
       titleTextStyle: titleTextStyle,
       posHorizontal: posHorizontal,
@@ -71,7 +65,6 @@ class ExpandableImageView extends StatefulWidget {
   factory ExpandableImageView.animatedFade({
     required String src,
     required Widget child,
-    double? size,
     Color? titleBGColor,
     TextStyle? titleTextStyle,
     bool posHorizontal = false,
@@ -79,7 +72,6 @@ class ExpandableImageView extends StatefulWidget {
     return ExpandableImageView._(
       src: src,
       animationType: ExpandableAnimation.fade,
-      size: size,
       titleBGColor: titleBGColor,
       titleTextStyle: titleTextStyle,
       posHorizontal: posHorizontal,
@@ -92,7 +84,6 @@ class ExpandableImageView extends StatefulWidget {
     required String src,
     required Widget child,
     AxisExpand axis = AxisExpand.vertical,
-    double? size,
     Color? titleBGColor,
     TextStyle? titleTextStyle,
     bool posHorizontal = false,
@@ -101,7 +92,6 @@ class ExpandableImageView extends StatefulWidget {
       src: src,
       axis: axis,
       animationType: ExpandableAnimation.def,
-      size: size,
       titleBGColor: titleBGColor,
       titleTextStyle: titleTextStyle,
       posHorizontal: posHorizontal,

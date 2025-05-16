@@ -15,6 +15,7 @@ class ExpandableTileView extends StatefulWidget {
   final TextStyle? titleTextStyle;
   final bool posHorizontal;
   final ExpandableAnimation animationType;
+  final bool showIcon;
 
   /// Private constructor
   const ExpandableTileView._(
@@ -25,6 +26,7 @@ class ExpandableTileView extends StatefulWidget {
       this.titleBGColor,
       this.titleTextStyle,
       this.posHorizontal = false,
+      this.showIcon = true,
       this.animationType = ExpandableAnimation.def});
 
   /// Animation Scale
@@ -34,12 +36,14 @@ class ExpandableTileView extends StatefulWidget {
     double? width,
     Color? titleBGColor,
     TextStyle? titleTextStyle,
+    bool showIcon = true,
     bool posHorizontal = false,
   }) {
     return ExpandableTileView._(
       title: title,
       animationType: ExpandableAnimation.scale,
       width: width,
+      showIcon: showIcon,
       titleBGColor: titleBGColor,
       titleTextStyle: titleTextStyle,
       posHorizontal: posHorizontal,
@@ -55,11 +59,13 @@ class ExpandableTileView extends StatefulWidget {
     Color? titleBGColor,
     TextStyle? titleTextStyle,
     bool posHorizontal = false,
+    bool showIcon = true,
   }) {
     return ExpandableTileView._(
       title: title,
       animationType: ExpandableAnimation.none,
       width: width,
+      showIcon: showIcon,
       titleBGColor: titleBGColor,
       titleTextStyle: titleTextStyle,
       posHorizontal: posHorizontal,
@@ -75,6 +81,7 @@ class ExpandableTileView extends StatefulWidget {
     Color? titleBGColor,
     TextStyle? titleTextStyle,
     bool posHorizontal = false,
+    bool showIcon = true,
   }) {
     return ExpandableTileView._(
       title: title,
@@ -83,6 +90,7 @@ class ExpandableTileView extends StatefulWidget {
       titleBGColor: titleBGColor,
       titleTextStyle: titleTextStyle,
       posHorizontal: posHorizontal,
+      showIcon: showIcon,
       child: child,
     );
   }
@@ -96,6 +104,7 @@ class ExpandableTileView extends StatefulWidget {
     Color? titleBGColor,
     TextStyle? titleTextStyle,
     bool posHorizontal = false,
+    bool showIcon = true,
   }) {
     return ExpandableTileView._(
       title: title,
@@ -105,6 +114,7 @@ class ExpandableTileView extends StatefulWidget {
       titleBGColor: titleBGColor,
       titleTextStyle: titleTextStyle,
       posHorizontal: posHorizontal,
+      showIcon: showIcon,
       child: child,
     );
   }

@@ -17,11 +17,11 @@ class ExpandableCustomView extends StatefulWidget {
   /// Private constructor
   const ExpandableCustomView._(
       {required this.title,
-        this.ratio = const Ratio(5, 5),
-        required this.child,
-        this.axis = AxisExpand.vertical,
-        this.posHorizontal = false,
-        this.animationType = ExpandableAnimation.def});
+      this.ratio = const Ratio(5, 5),
+      required this.child,
+      this.axis = AxisExpand.vertical,
+      this.posHorizontal = false,
+      this.animationType = ExpandableAnimation.def});
 
   /// Animation Scale
   factory ExpandableCustomView.animatedScale({
