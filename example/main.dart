@@ -1,4 +1,6 @@
+import 'package:expandable_tile/expandable_tile.dart';
 import 'package:expandable_tile/src/data/type.dart';
+import 'package:expandable_tile/src/models/ratio.dart';
 import 'package:expandable_tile/src/widget/expandable_image/expandable_image_view.dart';
 import 'package:expandable_tile/src/widget/expandable_tile/expandable_tile_view.dart';
 import 'package:flutter/material.dart';
@@ -211,6 +213,123 @@ class _ExpandedPageState extends State<ExpandedPage> {
     );
   }
 
+  Widget expandableCustom() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Text("None animation",
+            style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w700,
+                color: Colors.deepOrange)),
+        Padding(
+          padding: const EdgeInsets.only(left: 5.0),
+          child: ExpandableCustomView.noneAnimation(
+            title: const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("Custom Title", style: TextStyle(fontSize: 14, color: Colors.redAccent),),
+                Text("No animation", style: TextStyle(fontSize: 14, color: Colors.green),),
+                Icon(Icons.check, size: 27, color: Colors.redAccent),
+              ],
+            ) ,
+            child: const Text(
+                "This is demo for expand custom title without animation. The Child is Text"),
+          ),
+        ),
+        const Text("Vertical position",
+            style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w700,
+                color: Colors.deepOrange)),
+        Padding(
+          padding: const EdgeInsets.only(left: 5.0),
+          child: ExpandableCustomView.animatedDef(
+            title: const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("Custom Title", style: TextStyle(fontSize: 14, color: Colors.redAccent),),
+                Text("Default animation", style: TextStyle(fontSize: 14, color: Colors.green),),
+                Icon(Icons.check, size: 27, color: Colors.redAccent),
+              ],
+            ) ,
+            child: const Text(
+                "This is demo for expand image with default animation. The Child is Text"),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(left: 5.0),
+          child: ExpandableCustomView.animatedFade(
+            title: const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("Custom Title", style: TextStyle(fontSize: 14, color: Colors.redAccent),),
+                Text("Fade animation", style: TextStyle(fontSize: 14, color: Colors.green),),
+                Icon(Icons.check, size: 27, color: Colors.redAccent),
+              ],
+            ) ,
+            child: const Text(
+                "This is demo for expand image with fade animation. The Child is Text"),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(left: 5.0),
+          child: ExpandableCustomView.animatedScale(
+            title: const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("Custom Title", style: TextStyle(fontSize: 14, color: Colors.redAccent),),
+                Text("Scale animation", style: TextStyle(fontSize: 14, color: Colors.green),),
+                Icon(Icons.check, size: 27, color: Colors.redAccent),
+              ],
+            ) ,
+            child: const Text(
+                "This is demo for expand image with scale animation. The Child is Text"),
+          ),
+        ),
+        const Text("Horizontal position",
+            style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w700,
+                color: Colors.deepOrange)),
+        Padding(
+          padding: const EdgeInsets.only(left: 5.0),
+          child: ExpandableCustomView.animatedFade(
+            posHorizontal: true,
+            ratio: const Ratio(7,3),
+            title: const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("Custom Title", style: TextStyle(fontSize: 14, color: Colors.redAccent),),
+                Text("Fade animation", style: TextStyle(fontSize: 14, color: Colors.green),),
+                Icon(Icons.check, size: 27, color: Colors.redAccent),
+              ],
+            ) ,
+            child: const Text(
+                "This is demo for expand image with fade animation. The Child is Text"),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(left: 5.0),
+          child: ExpandableCustomView.animatedScale(
+            posHorizontal: true,
+            ratio: const Ratio(7,3),
+            title: const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("Custom Title", style: TextStyle(fontSize: 14, color: Colors.redAccent),),
+                Text("Scale animation", style: TextStyle(fontSize: 14, color: Colors.green),),
+                Icon(Icons.check, size: 27, color: Colors.redAccent),
+              ],
+            ) ,
+            child: const Text(
+                "This is demo for expand image with scale animation. The Child is Text"),
+          ),
+        ),
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -228,7 +347,11 @@ class _ExpandedPageState extends State<ExpandedPage> {
               ExpandableTileView.animatedDef(
                   title: "Demo expandable image",
                   child: expandImage()
-              )
+              ),
+              ExpandableTileView.animatedDef(
+                  title: "Demo expandable custom title",
+                  child: expandableCustom()
+              ),
             ],
           ),
         ),

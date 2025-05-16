@@ -79,9 +79,7 @@ class _ExpandSectionState extends State<ExpandSection>
   }
 
   Map<ExpandableAnimation, AnimationBuilder> getAnimationBuilders(
-      AxisExpand axisExpand, {
-        AnimationBuilder? customBuilder,
-      }) {
+      AxisExpand axisExpand) {
     final axis =
         axisExpand == AxisExpand.horizontal ? Axis.horizontal : Axis.vertical;
     return {

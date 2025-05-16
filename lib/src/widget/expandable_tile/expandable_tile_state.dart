@@ -80,6 +80,7 @@ class ExpandableTileViewState extends State<ExpandableTileView> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Flexible(

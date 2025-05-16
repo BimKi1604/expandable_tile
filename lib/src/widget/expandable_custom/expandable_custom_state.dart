@@ -1,10 +1,8 @@
 import 'package:expandable_tile/expandable_tile.dart';
 import 'package:expandable_tile/src/utils/animation_utils.dart';
+import 'package:expandable_tile/src/utils/click_widget.dart';
 import 'package:expandable_tile/src/widget/expand_section.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import 'expandable_custom_view.dart';
 
 /// Expandable Custom widget State control state expand
 class ExpandableCustomViewState extends State<ExpandableCustomView> {
@@ -54,14 +52,21 @@ class ExpandableCustomViewState extends State<ExpandableCustomView> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Flexible(
-              child: widget.title,
+              flex: widget.ratio.left,
+              child: ClickWidget(
+                color: Colors.white.withOpacity(0.3),
+                onTap: controller.toggleExpand,
+                  child: widget.title
+              ),
             ),
             const SizedBox(width: 5.0),
             if (widget.posHorizontal)
               Flexible(
+                flex: widget.ratio.right,
                 child: sectionWidget(),
               ),
           ],
