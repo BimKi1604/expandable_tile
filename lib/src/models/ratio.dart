@@ -1,10 +1,11 @@
+/// The model ratio help for horizontal widget
 class Ratio {
   final int left;
   final int right;
 
   const Ratio(this.left, this.right);
 
-  /// Tính tỉ số dạng double
+  /// ratio value double
   double get value => left / right;
 
   @override

@@ -1,13 +1,10 @@
 import 'package:expandable_tile/expandable_tile.dart';
-import 'package:expandable_tile/src/theme/styles.dart';
 import 'package:expandable_tile/src/utils/animation_utils.dart';
 import 'package:expandable_tile/src/utils/click_widget.dart';
 import 'package:expandable_tile/src/utils/image_utils.dart';
 import 'package:expandable_tile/src/widget/expand_section.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import 'expandable_image_view.dart';
 
 /// Expandable Image State control state expand
 class ExpandableImageViewState extends State<ExpandableImageView> {
